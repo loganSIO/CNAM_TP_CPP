@@ -14,4 +14,6 @@ int main()
 	r1.afficher();
 	c1.afficher();
 	t1.afficher();
+
+	system("pause");
 }
