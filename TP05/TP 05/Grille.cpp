@@ -141,7 +141,6 @@ void Grille::demandeSaisie(int joueur_actuel)
         std::cout << "Erreur de saisie ou case rempli" << endl;
         demandeSaisie(joueur_actuel);
     }
-
 }
 
 // Demande de saisie pour colonne uniquement
@@ -149,9 +148,24 @@ bool Grille::demandeSaisieColonne(int joueur_actuel)
 {
     int saisiecolonne = 0;
 
-    std::cout << "Le joueur indique dans quel colonne sera son pion" << endl;
-    std::cin >> saisiecolonne;
-    std::cin.ignore();
+    do {
+
+        std::cout << "Le joueur indique dans quel colonne sera son pion" << endl;
+
+        while (true)
+        {
+            std::cin >> saisiecolonne;
+            if (!std::cin)
+            {
+                std::cout << "Veuillez saisir un nombre entier." << std::endl;
+                std::cin.clear();
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                continue;
+            }
+            else break;
+        }
+
+    } while(saisiecolonne > 6);
 
     // permet au pion de se situer tout en bas de la grille
     for (int i = 3; i >= 0; i--)

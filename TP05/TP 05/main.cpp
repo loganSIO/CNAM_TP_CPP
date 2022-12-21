@@ -7,13 +7,13 @@ using namespace std;
 
 int main()
 {
-    int choice = 0;
+    int choix = 0;
 
     do
     {
-        Morpionx game1 = Morpionx();
-        Puissance4 game2 = Puissance4();
-        Othello game3 = Othello();
+        Morpionx jeu1 = Morpionx();
+        Puissance4 jeu2 = Puissance4();
+        Othello jeu3 = Othello();
 
         std::cout << "-- Acces aux jeux --" << std::endl;
         std::cout << "1 - Morpion" << std::endl;
@@ -23,7 +23,7 @@ int main()
         // Vérification si choice est un int 
         while (true)
         {
-            std::cin >> choice;
+            std::cin >> choix;
             if (!std::cin)
             {
                 std::cout << "Veuillez saisir un nombre entier." << std::endl;
@@ -34,21 +34,21 @@ int main()
             else break;
         }
 
-        switch (choice)
+        switch (choix)
         {
         case 1:
-            game1.jeuDuMorpionx();
+            jeu1.jeuDuMorpionx();
             break;
         case 2:
-            game2.jeuPuissance4();
+            jeu2.jeuPuissance4();
             break;
         case 3:
-            game3.jeuOthello();
+            jeu3.jeuOthello();
             break;
         default:
             std::cout << "Veuillez choisir entre 1, 2 ou 3 !" << std::endl;
         }
-    } while (choice > 3);
+    } while (choix > 3);
 
     return 0;
 }

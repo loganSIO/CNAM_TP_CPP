@@ -22,6 +22,4 @@ public:
     bool gagnerColonne();
 };
 
-
-
 #endif //VERSION_3_TEST_TP3_MORPIONX_H
