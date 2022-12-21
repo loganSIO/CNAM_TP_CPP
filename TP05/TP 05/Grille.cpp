@@ -7,8 +7,8 @@
 //Constructeur
 Grille::Grille(const int ColonneVector, const int LigneVector)
 {
-    lignevector = LigneVector;
     colonnevector = ColonneVector;
+    lignevector = LigneVector;
     //pionGagnant = PionGagnant;
 }
 
@@ -59,16 +59,9 @@ void Grille::afficheGrille()
 
 
 //Fonction permettant de savoir si l'utilisateur n'a pas dépassé la portee de la grille
-bool Grille::porteeGrille(const int saisiecolonne, const int saisieligne) const
+bool Grille::porteeGrille(const int saisieligne, const int saisiecolonne) const
 {
-    if ((saisiecolonne >= 0) && (saisieligne >= 0) && (saisiecolonne <= colonnevector) && (saisieligne <= lignevector))
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
+    return (saisiecolonne >= 0) && (saisiecolonne < grille[0].size()) && (saisieligne >= 0) && (saisieligne < grille.size());
 }
 
 //Fonction permettant de savoir si la case selectionnée par l'utilisateur est vide
@@ -177,24 +170,27 @@ bool Grille::demandeSaisieColonne(int joueur_actuel)
 {
     int saisiecolonne = 0;
 
-    do {
+    std::cout << "Le joueur indique dans quel colonne sera son pion" << std::endl;
 
-        std::cout << "Le joueur indique dans quel colonne sera son pion" << endl;
-
-        while (true)
+    while (true)
+    {
+        std::cin >> saisiecolonne;
+        if (!std::cin)
         {
-            std::cin >> saisiecolonne;
-            if (!std::cin)
-            {
-                std::cout << "Veuillez saisir un nombre entier." << std::endl;
-                std::cin.clear();
-                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                continue;
-            }
-            else break;
+            std::cout << "Veuillez saisir un nombre entier." << std::endl;
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            continue;
         }
-
-    } while(saisiecolonne > 6 && saisiecolonne < 0);
+        else if (saisiecolonne >= 0 && saisiecolonne < grille[0].size())
+        {
+            break;
+        }
+        else
+        {
+            std::cout << "Veuillez saisir un nombre entier compris entre 0 et " << grille[0].size() - 1 << "." << std::endl;
+        }
+    }
 
     // permet au pion de se situer tout en bas de la grille
     for (int i = 3; i >= 0; i--)
@@ -208,7 +204,6 @@ bool Grille::demandeSaisieColonne(int joueur_actuel)
     }
     return false;
 }
-
 
 //Fonction permettant de savoir qui est le gagnant
 string Grille::j1OuJ2()
