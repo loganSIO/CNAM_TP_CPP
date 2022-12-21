@@ -1,32 +1,30 @@
 #include "Puissance4.h"
+#include "Jeu.h"
 
 //Constructeur
 
-Puissance4::Puissance4() : Grille(4, 7)
-{
-
-}
+Puissance4 puissance4(4, 7);
 
 //Fonction permettant la mise en marche d'une partie de puissance 4
 void Puissance4::jeuPuissance4()
 {
-    initialiserGrille();
+    Grille::initialiserGrille();
 
-    while (!gagnerDiagonalePuissance() && !gagnerLignePuissance() && !gagnerColonnePuissance() && !videGrille()) {
+    while (!Jeu::gagnerDiagonalePuissance() && !Jeu::gagnerLignePuissance() && !Jeu::gagnerColonnePuissance() && !Grille::videGrille()) {
         std::cout << "Tour joueur 1" << endl;
-        Grille::demandeSaisiePuissance4(1);
-        if (!gagnerDiagonalePuissance() && !gagnerLignePuissance() && !gagnerColonnePuissance() && !videGrille()) {
+        Jeu::demandeSaisiePuissance4(1);
+        if (!Jeu::gagnerDiagonalePuissance() && !Jeu::gagnerLignePuissance() && !Jeu::gagnerColonnePuissance() && !Grille::videGrille()) {
             std::cout << "Tour joueur 2" << endl;
-            Grille::demandeSaisiePuissance4(2);
+            Jeu::demandeSaisiePuissance4(2);
         }
     }
 
-    if (gagnerDiagonalePuissance() || gagnerLignePuissance() || gagnerColonnePuissance())
+    if (Jeu::gagnerDiagonalePuissance() || Jeu::gagnerLignePuissance() || Jeu::gagnerColonnePuissance())
     {
-        std::cout << "Le gagnant est le " << j1OuJ2() << endl;
+        std::cout << "Le gagnant est le " << Grille::j1OuJ2() << endl;
     }
 
-    if (videGrille() && !gagnerDiagonalePuissance() && !gagnerLignePuissance() && !gagnerColonnePuissance())
+    if (Grille::videGrille() && !Jeu::gagnerDiagonalePuissance() && !Jeu::gagnerLignePuissance() && !Jeu::gagnerColonnePuissance())
     {
         std::cout << "Vous etes a egalite" << endl;
     }

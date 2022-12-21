@@ -3,17 +3,18 @@
 #include <iostream>
 #include <vector>
 #include "Grille.h"
+#include "Jeu.h"
 #include <cstdlib>
 #include <string>
 
 
 using namespace std;
 
-class Morpionx : public Grille {
+class Morpionx : public Jeu {
 
 public:
     // Constructeur
-    Morpionx();
+    Morpionx(int ColonneVector, int LigneVector) : Jeu(ColonneVector, LigneVector) {}
 
     //Signature des fonctions
     void jeuDuMorpionx();

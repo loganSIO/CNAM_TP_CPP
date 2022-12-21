@@ -1,31 +1,29 @@
 #include "Othello.h"
+#include "Jeu.h"
 
 //Constructeur
 
-Othello::Othello() : Grille(8, 8)
-{
-
-}
+Othello othello(8, 8);
 
 //Fonction permettant la mise en marche d'une partie d'Othello
 void Othello::jeuOthello()
 {
-    initialiserGrille();
+    Grille::initialiserGrille();
 
     //Placement des pions initiaux (1 = blanc / 2 = noir)
-    grille[3][3] = 1;
-    grille[4][4] = 1;
-    grille[3][4] = 2;
-    grille[4][3] = 2;
+    Grille::grille[3][3] = 1;
+    Grille::grille[4][4] = 1;
+    Grille::grille[3][4] = 2;
+    Grille::grille[4][3] = 2;
 
-    afficheGrille();
+    Grille::afficheGrille();
 
-    while (!videGrille() && !gagneZero()) {
+    while (!Grille::videGrille() && !Jeu::gagneZero()) {
         std::cout << "Tour joueur 1" << endl;
-        Othello::demandeSaisieMorpionOthello(1);
-        if (!videGrille() && !gagneZero()) {
+        Jeu::demandeSaisieMorpionOthello(1);
+        if (!Grille::videGrille() && !Jeu::gagneZero()) {
             std::cout << "Tour joueur 2" << endl;
-            Othello::demandeSaisieMorpionOthello(2);
+            Jeu::demandeSaisieMorpionOthello(2);
         }
     }
 
@@ -35,10 +33,10 @@ void Othello::jeuOthello()
     // Calcul du nombre de pions de chaque joueurs à la fin de la partie
     for (int i = 0; i < 8; i++) {
         for (int j = 0; j < 8; j++) {
-            if (grille[i][j] == 1) {
+            if (Grille::grille[i][j] == 1) {
                 points_joueur_1++;
             }
-            else if (grille[i][j] == 2) {
+            else if (Grille::grille[i][j] == 2) {
                 points_joueur_2++;
             }
         }

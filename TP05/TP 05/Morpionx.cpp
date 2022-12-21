@@ -1,32 +1,30 @@
 #include "Morpionx.h"
+#include "Jeu.h"
 
 //Constructeur
 
-Morpionx::Morpionx() : Grille(3, 3)
-{
-
-}
+Morpionx morpionx(3, 3); 
 
 //Fonction permettant la mise en marche d'une partie de morpion
 void Morpionx::jeuDuMorpionx()
 {
-    initialiserGrille();
+    Grille::initialiserGrille();
 
-    while (!gagnerDiagonale() && !gagnerLigne() && !gagnerColonne() && !videGrille()) {
+    while (!Jeu::gagnerDiagonale() && !Jeu::gagnerLigne() && !Jeu::gagnerColonne() && !Jeu::videGrille()) {
         std::cout << "Tour joueur 1" << endl;
-        Grille::demandeSaisieMorpion(1);
-        if (!gagnerDiagonale() && !gagnerLigne() && !gagnerColonne() && !videGrille()) {
+        Jeu::demandeSaisieMorpion(1);
+        if (!Jeu::gagnerDiagonale() && !Jeu::gagnerLigne() && !Jeu::gagnerColonne() && !Jeu::videGrille()) {
             std::cout << "Tour joueur 2" << endl;
-            Grille::demandeSaisieMorpion(2);
+            Jeu::demandeSaisieMorpion(2);
         }
     }
 
-    if (gagnerDiagonale() || gagnerLigne() || gagnerColonne())
+    if (Jeu::gagnerDiagonale() || Jeu::gagnerLigne() || Jeu::gagnerColonne())
     {
-        std::cout << "Le gagnant est le " << j1OuJ2() << endl;
+        std::cout << "Le gagnant est le " << Grille::j1OuJ2() << endl;
     }
 
-    if (videGrille() && !gagnerDiagonale() && !gagnerLigne() && !gagnerColonne())
+    if (Jeu::videGrille() && !Jeu::gagnerDiagonale() && !Jeu::gagnerLigne() && !Jeu::gagnerColonne())
     {
         std::cout << "Vous etes a egalite" << endl;
     }

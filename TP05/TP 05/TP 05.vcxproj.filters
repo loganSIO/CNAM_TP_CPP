@@ -27,6 +27,9 @@
     <ClInclude Include="Othello.h">
       <Filter>Fichiers sources</Filter>
     </ClInclude>
+    <ClInclude Include="Jeu.h">
+      <Filter>Fichiers sources</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Puissance4.cpp">
@@ -42,6 +45,9 @@
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="Othello.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Jeu.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>

@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Grille.h"
+#include "Jeu.h"
 #include "Morpionx.h"
 #include "Puissance4.h"
 #include "Othello.h"
@@ -11,9 +12,9 @@ int main()
 
     do
     {
-        Morpionx jeu1 = Morpionx();
-        Puissance4 jeu2 = Puissance4();
-        Othello jeu3 = Othello();
+        Morpionx jeu1 = Morpionx(3, 3);
+        Puissance4 jeu2 = Puissance4(4, 7);
+        Othello jeu3 = Othello(8, 8);
 
         std::cout << "-- Acces aux jeux --" << std::endl;
         std::cout << "1 - Morpion" << std::endl;

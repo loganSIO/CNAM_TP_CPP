@@ -140,12 +140,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Grille.h" />
+    <ClInclude Include="Jeu.h" />
     <ClInclude Include="Morpionx.h" />
     <ClInclude Include="Othello.h" />
     <ClInclude Include="Puissance4.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Grille.cpp" />
+    <ClCompile Include="Jeu.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Morpionx.cpp" />
     <ClCompile Include="Othello.cpp" />
