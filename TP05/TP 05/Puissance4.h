@@ -13,9 +13,6 @@ public:
     Puissance4();
     //Signature des fonctions
     void jeuPuissance4();
-    bool gagnerLignePuissance();
-    bool gagnerDiagonalePuissance();
-    bool gagnerColonnePuissance();
 };
 
 

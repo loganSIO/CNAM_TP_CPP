@@ -17,9 +17,6 @@ public:
 
     //Signature des fonctions
     void jeuDuMorpionx();
-    bool gagnerLigne();
-    bool gagnerDiagonale();
-    bool gagnerColonne();
 };
 
 #endif //VERSION_3_TEST_TP3_MORPIONX_H

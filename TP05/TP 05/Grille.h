@@ -28,8 +28,22 @@ public:
     bool caseVide(const int saisiecolonne, const int saisieligne) const;
     void insererPoint(int saisiecolonne, int saisieligne, int id);
     bool videGrille();
-    void demandeSaisie(int joueur_actuel);
-    bool demandeSaisieColonne(int joueur_actuel);
+    // Morpion
+    void demandeSaisieMorpion(int joueur_actuel);
+    bool gagnerLigne();
+    bool gagnerDiagonale();
+    bool gagnerColonne();
+    // Puisssance 4
+    bool demandeSaisiePuissance4(int joueur_actuel);
+    bool gagnerLignePuissance();
+    bool gagnerDiagonalePuissance();
+    bool gagnerColonnePuissance();
+
+    // Othello
+    void demandeSaisieMorpionOthello(int joueur_actuel);
+    bool remplacerLigneOthello(int x, int y, int joueur_actuel);
+    bool remplacerColonneOthello(int x, int y, int joueur_actuel);
+    bool remplacerDiagonaleOthello(int x, int y, int joueur_actuel);
     string j1OuJ2();
     bool gagneZero();
     std::vector<std::vector<int> > grille = std::vector<std::vector<int> >(lignevector);
