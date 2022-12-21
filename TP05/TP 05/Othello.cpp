@@ -188,43 +188,51 @@ void Othello::demandeSaisieOthello(int joueur_actuel)
 {
     int saisieligne = 0;
 
-    do {
+    std::cout << "Le joueur indique dans quel colonne sera son pion" << std::endl;
 
-        std::cout << "Le joueur indique dans quel colonne sera son pion" << endl;
-
-        while (true)
+    while (true)
+    {
+        std::cin >> saisieligne;
+        if (!std::cin)
         {
-            std::cin >> saisieligne;
-            if (!std::cin)
-            {
-                std::cout << "Veuillez saisir un nombre entier." << std::endl;
-                std::cin.clear();
-                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                continue;
-            }
-            else break;
+            std::cout << "Veuillez saisir un nombre entier." << std::endl;
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            continue;
         }
-    } while (saisieligne > 7 && saisieligne < 0);
+        else if (saisieligne >= 0 && saisieligne < grille.size())
+        {
+            break;
+        }
+        else
+        {
+            std::cout << "Veuillez saisir un nombre entier compris entre 0 et " << grille.size() - 1 << "." << std::endl;
+        }
+    }
 
     int saisiecolonne = 0;
 
-    do {
+    std::cout << "Le joueur indique dans quel ligne sera son pion" << std::endl;
 
-        std::cout << "Le joueur indique dans quel ligne sera son pion" << endl;
-
-        while (true)
+    while (true)
+    {
+        std::cin >> saisiecolonne;
+        if (!std::cin)
         {
-            std::cin >> saisiecolonne;
-            if (!std::cin)
-            {
-                std::cout << "Veuillez saisir un nombre entier." << std::endl;
-                std::cin.clear();
-                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                continue;
-            }
-            else break;
+            std::cout << "Veuillez saisir un nombre entier." << std::endl;
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            continue;
         }
-    } while (saisiecolonne > 7 && saisiecolonne < 0);
+        else if (saisiecolonne >= 0 && saisiecolonne < grille[0].size())
+        {
+            break;
+        }
+        else
+        {
+            std::cout << "Veuillez saisir un nombre entier compris entre 0 et " << grille[0].size() - 1 << "." << std::endl;
+        }
+    }
 
     // Vérifie si la position spécifiée est vide et dans les limites de la grille.
     if (caseVide(saisiecolonne, saisieligne) && porteeGrille(saisiecolonne, saisieligne)) {
