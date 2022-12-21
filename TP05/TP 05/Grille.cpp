@@ -198,3 +198,27 @@ string Grille::j1OuJ2()
         return "Joueur 2";
     }
 }
+
+bool Grille::gagneZero()
+{
+    int points_joueur_1 = 0;
+    int points_joueur_2 = 0;
+
+    // Calcul du nombre de pions de chaque joueurs à la fin de la partie
+    for (int i = 0; i < 8; i++) {
+        for (int j = 0; j < 8; j++) {
+            if (grille[i][j] == 1) {
+                points_joueur_1++;
+            }
+            else if (grille[i][j] == 2) {
+                points_joueur_2++;
+            }
+        }
+    }
+
+    if (points_joueur_1 == 0 || points_joueur_2 == 0) {
+        return true;
+    }
+
+    return false;
+}

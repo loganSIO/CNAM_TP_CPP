@@ -10,10 +10,6 @@ Othello::Othello() : Grille(8, 8)
 //Fonction permettant la mise en marche d'une partie d'Othello
 void Othello::jeuOthello()
 {
-    int saisiecolonne = 0;
-    int saisieligne = 0;
-    int joueur_actuel = 0;
-
     initialiserGrille();
 
     //Placement des pions initiaux (1 = blanc / 2 = noir)
@@ -24,10 +20,10 @@ void Othello::jeuOthello()
 
     afficheGrille();
 
-    while (!videGrille()) {
+    while (!videGrille() && !gagneZero()) {
         std::cout << "Tour joueur 1" << endl;
         Othello::demandeSaisieOthello(1);
-        if (!videGrille()) {
+        if (!videGrille() && !gagneZero()) {
             std::cout << "Tour joueur 2" << endl;
             Othello::demandeSaisieOthello(2);
         }
@@ -50,8 +46,8 @@ void Othello::jeuOthello()
 
     // Affichage des scores
 
-    std::cout << "Joueur 1: " << points_joueur_1 << " points" << endl;
-    std::cout << "Joueur 2: " << points_joueur_2 << " points" << endl;
+    std::cout << "Joueur 1: " << points_joueur_1 << " pions" << endl;
+    std::cout << "Joueur 2: " << points_joueur_2 << " pions" << endl;
 
     if (points_joueur_1 > points_joueur_2) {
         std::cout << "Joueur 1 a gagne !" << endl;

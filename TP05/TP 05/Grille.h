@@ -31,6 +31,7 @@ public:
     void demandeSaisie(int joueur_actuel);
     bool demandeSaisieColonne(int joueur_actuel);
     string j1OuJ2();
+    bool gagneZero();
     std::vector<std::vector<int> > grille = std::vector<std::vector<int> >(lignevector);
 
     int lignevector;
