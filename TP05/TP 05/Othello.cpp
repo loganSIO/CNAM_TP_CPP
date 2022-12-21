@@ -187,15 +187,44 @@ bool Othello::remplacerDiagonaleOthello(int x, int y, int joueur_actuel)
 void Othello::demandeSaisieOthello(int joueur_actuel)
 {
     int saisieligne = 0;
+
+    do {
+
+        std::cout << "Le joueur indique dans quel colonne sera son pion" << endl;
+
+        while (true)
+        {
+            std::cin >> saisieligne;
+            if (!std::cin)
+            {
+                std::cout << "Veuillez saisir un nombre entier." << std::endl;
+                std::cin.clear();
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                continue;
+            }
+            else break;
+        }
+    } while (saisieligne > 7 && saisieligne < 0);
+
     int saisiecolonne = 0;
 
-    std::cout << "Le joueur indique dans quel colonne sera son pion" << endl;
-    std::cin >> saisieligne;
-    std::cin.ignore();
+    do {
 
-    std::cout << "Le joueur indique dans quel ligne sera son pion" << endl;
-    std::cin >> saisiecolonne;
-    std::cin.ignore();
+        std::cout << "Le joueur indique dans quel ligne sera son pion" << endl;
+
+        while (true)
+        {
+            std::cin >> saisiecolonne;
+            if (!std::cin)
+            {
+                std::cout << "Veuillez saisir un nombre entier." << std::endl;
+                std::cin.clear();
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                continue;
+            }
+            else break;
+        }
+    } while (saisiecolonne > 7 && saisiecolonne < 0);
 
     // Vérifie si la position spécifiée est vide et dans les limites de la grille.
     if (caseVide(saisiecolonne, saisieligne) && porteeGrille(saisiecolonne, saisieligne)) {
