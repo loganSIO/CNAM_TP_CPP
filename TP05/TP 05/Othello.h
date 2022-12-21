@@ -1,3 +1,5 @@
+#ifndef _OTHELLO_H
+#define _OTHELLO_H
 #include <iostream>
 #include <vector>
 #include "Grille.h"
@@ -14,3 +16,5 @@ public:
     //Signature des fonctions
     void jeuOthello();
 };
+
+#endif

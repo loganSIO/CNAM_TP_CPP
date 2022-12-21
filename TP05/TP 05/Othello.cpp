@@ -20,10 +20,10 @@ void Othello::jeuOthello()
 
     while (!Grille::videGrille() && !Jeu::gagneZero()) {
         std::cout << "Tour joueur 1" << endl;
-        Jeu::demandeSaisieMorpionOthello(1);
+        Jeu::demandeSaisieOthello(1);
         if (!Grille::videGrille() && !Jeu::gagneZero()) {
             std::cout << "Tour joueur 2" << endl;
-            Jeu::demandeSaisieMorpionOthello(2);
+            Jeu::demandeSaisieOthello(2);
         }
     }
 

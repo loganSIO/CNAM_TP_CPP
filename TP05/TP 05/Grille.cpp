@@ -16,6 +16,7 @@ void Grille::setLignevector(const int lv)
 {
     lignevector = lv;
 }
+
 //Getter de lignevector
 int Grille::getLignevector() const
 {
@@ -27,6 +28,7 @@ void Grille::setColonnevector(const int cv)
 {
     colonnevector = cv;
 }
+
 //Getter de colonnevector
 int Grille::getColonnevector() const
 {
@@ -40,7 +42,7 @@ void Grille::initialiserGrille()
     grille.resize(colonnevector);
     for (i = 0; i < colonnevector; i++)
     {
-        grille[i].resize(lignevector, 0); // initialize all values to 0
+        grille[i].resize(lignevector, 0); // initialise toutes les valeurs a 0
     }
 }
 
@@ -55,7 +57,6 @@ void Grille::afficheGrille()
         std::cout << "]\n";
     }
 }
-
 
 //Fonction permettant de savoir si l'utilisateur n'a pas dépassé la portee de la grille
 bool Grille::porteeGrille(const int saisieligne, const int saisiecolonne) const
@@ -82,7 +83,6 @@ void Grille::insererPoint(int saisiecolonne, int saisieligne, int id)
     grille[saisiecolonne][saisieligne] = id;
     afficheGrille();
 }
-
 
 //Fonction permettant de savoir si le tableau est vide ou non (egalite)
 //return true si il est vide

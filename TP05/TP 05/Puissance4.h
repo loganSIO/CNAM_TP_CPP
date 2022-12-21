@@ -1,5 +1,5 @@
-#ifndef VERSION_4_TP_3_MORPION_DELTA_VERSION_PUISSANCE4_H
-#define VERSION_4_TP_3_MORPION_DELTA_VERSION_PUISSANCE4_H
+#ifndef _PUISSANCE4_H
+#define _PUISSANCE4_H
 #include <iostream>
 #include <vector>
 #include "Grille.h"
@@ -18,4 +18,4 @@ public:
 };
 
 
-#endif //VERSION_4_TP_3_MORPION_DELTA_VERSION_PUISSANCE4_H
+#endif 

@@ -18,7 +18,7 @@
     <ClInclude Include="Puissance4.h">
       <Filter>Fichiers sources</Filter>
     </ClInclude>
-    <ClInclude Include="Morpionx.h">
+    <ClInclude Include="Morpion.h">
       <Filter>Fichiers sources</Filter>
     </ClInclude>
     <ClInclude Include="Grille.h">
@@ -35,7 +35,7 @@
     <ClCompile Include="Puissance4.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="Morpionx.cpp">
+    <ClCompile Include="Morpion.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">

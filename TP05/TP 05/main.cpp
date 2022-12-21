@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Grille.h"
 #include "Jeu.h"
-#include "Morpionx.h"
+#include "Morpion.h"
 #include "Puissance4.h"
 #include "Othello.h"
 using namespace std;
@@ -12,7 +12,7 @@ int main()
 
     do
     {
-        Morpionx jeu1 = Morpionx(3, 3);
+        Morpion jeu1 = Morpion(3, 3);
         Puissance4 jeu2 = Puissance4(4, 7);
         Othello jeu3 = Othello(8, 8);
 
@@ -38,7 +38,7 @@ int main()
         switch (choix)
         {
         case 1:
-            jeu1.jeuDuMorpionx();
+            jeu1.jeuDuMorpion();
             break;
         case 2:
             jeu2.jeuPuissance4();

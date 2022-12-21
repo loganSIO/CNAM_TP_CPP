@@ -4,12 +4,9 @@
 #include <cstdlib>
 #include <string>
 
-// MORPIOOOOOOOOOOOOOOOOOOOOON
-
 Jeu jeu();
 
-
-//Fonction demande saisie joueur
+//Fonction demande saisie joueur pour Morpion
 void Jeu::demandeSaisieMorpion(int joueur_actuel)
 {
     int saisieligne = 0;
@@ -88,8 +85,6 @@ bool Jeu::gagnerColonne()
     return false;
 }
 
-
-
 //Fonction permettant de verifier si un des joueurs à gagner (diagonale)
 bool Jeu::gagnerDiagonale()
 {
@@ -110,7 +105,6 @@ bool Jeu::gagnerDiagonale()
     return false;
 }
 
-
 //Fonction permettant de verifier si un des joueurs à gagner (ligne)
 bool Jeu::gagnerLigne()
 {
@@ -128,8 +122,7 @@ bool Jeu::gagnerLigne()
     return false;
 }
 
-// PUISSSSSSSSANNNNNNNNNNCE 4
-// Demande de saisie pour colonne uniquement
+// Demande de saisie pour Puissance4
 bool Jeu::demandeSaisiePuissance4(int joueur_actuel)
 {
     int saisiecolonne = 0;
@@ -188,7 +181,6 @@ bool Jeu::gagnerLignePuissance()
     return false;
 }
 
-
 //Permet de savoir si il y a une colonne gagnante puissance4
 bool Jeu::gagnerColonnePuissance()
 {
@@ -231,8 +223,8 @@ bool Jeu::gagnerDiagonalePuissance()
     return false;
 }
 
-// OTHELLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLO
-
+// Methode qui retourne true lorsqu'un des deux joueurs du Othello n'a plus de pions
+// sur le board
 bool Jeu::gagneZero()
 {
     int points_joueur_1 = 0;
@@ -257,7 +249,8 @@ bool Jeu::gagneZero()
     return false;
 }
 
-void Jeu::demandeSaisieMorpionOthello(int joueur_actuel)
+// Demande saisie utilisateur pour Othello
+void Jeu::demandeSaisieOthello(int joueur_actuel)
 {
     while (true) {
         int saisieligne = 0;
